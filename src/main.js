@@ -4,9 +4,13 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import locale from 'element-ui/lib/locale/lang/zh-CN'
 
-import '@/styles/index.scss' // global css
+// 数据字典
+import dict from './components/Dict'
+
+// global css
+import '@/assets/styles/index.scss'
 
 import App from './App'
 import store from './store'
@@ -28,6 +32,7 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
+Vue.use(dict)
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
